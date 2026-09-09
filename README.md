@@ -79,27 +79,65 @@ Exemplo:
 npm run link:skills
 ```
 
-Opções escritas depois de `--` seguem para a etapa de clone:
+## Como adicionar novos repositórios
 
-```bash
-npm run init -- --depth 1        # primeira carga mais rápida, histórico truncado
+O arquivo [`repositories.json`](repositories.json) usa formato de array simples.
+Cada item deve ter, no mínimo, `name` e `url`.
+
+Exemplo:
+
+```json
+[
+   {
+      "name": "core-service",
+      "url": "git@github.com:your-org/core-service.git"
+   },
+   {
+      "name": "novo-repositorio",
+      "url": "git@github.com:your-org/novo-repositorio.git"
+   }
+]
 ```
 
-As etapas também rodam soltas, via `npm run link:skills` e `npm run clone`.
+Regras importantes:
 
-Para sincronizar os clones existentes depois:
+- `name` vira o nome da pasta em `repositories/`, então precisa ser único.
+- Use apenas caracteres seguros no `name`: `a-z`, `0-9`, `.`, `_` e `-`.
+- `url` deve ser a URL do remote git com acesso configurado na sua máquina.
+
+Depois de editar o inventário:
+
+```bash
+npm run clone -- --dry-run
+npm run clone
+```
+
+## Fluxo de clone e atualização
+
+### Repassando opções via init
+
+Argumentos informados após `--` em `npm run init` são repassados para o script de clone.
+
+```bash
+npm run init -- --depth 1
+npm run init -- --only core-service
+```
+
+### Atualizando clones existentes
+
+Para sincronizar repositórios já clonados:
 
 ```bash
 npm run clone:update
 ```
 
-O `--update` só avança a branch local por fast-forward — alterações locais não commitadas são
-preservadas e o repositório é apenas reportado.
+Com `--update`, o script faz fetch e só avança a branch local por fast-forward.
+Se houver alterações locais não commitadas, o repositório é apenas reportado.
 
-Uma falha em um repositório não interrompe os demais. No fim da execução sai um relatório com o
-que foi clonado, o que foi atualizado e, para cada falha, a mensagem do git e a URL do remote.
+Uma falha em um repositório não interrompe os demais. Ao final, sai um relatório com o que foi
+clonado, atualizado, mantido sem alteração e com falha.
 
-Todas as opções em:
+### Ajuda completa
 
 ```bash
 node scripts/clone-repositories.js --help
