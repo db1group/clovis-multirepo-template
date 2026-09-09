@@ -1,0 +1,23 @@
+# Clones locais dos repositórios do produto (inventário em repositories.json)
+/repositories/*
+!/repositories/.gitkeep
+
+# Link para .agents/skills, criado por `npm run link:skills`
+/.claude/skills
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Ambiente
+.env
+.env.*
+!.env.example
+
+# Sistema operacional / editores
+.DS_Store
+Thumbs.db
+.idea/
+*.swp

@@ -1,0 +1,14 @@
+[
+  {
+    "name": "core-service",
+    "url": "git@github.com:your-org/core-service.git"
+  },
+  {
+    "name": "integration-api",
+    "url": "git@github.com:your-org/integration-api.git"
+  },
+  {
+    "name": "integration-worker",
+    "url": "git@github.com:your-org/integration-worker.git"
+  }
+]

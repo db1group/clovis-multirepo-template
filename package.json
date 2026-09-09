@@ -1,0 +1,16 @@
+{
+  "name": "clovis-multirepo-template",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Template multi-repositorio para base de conhecimento, skills e specs com Clovis CLI.",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "init": "node scripts/init.js",
+    "clone": "node scripts/clone-repositories.js",
+    "clone:update": "node scripts/clone-repositories.js --update",
+    "link:skills": "node scripts/link-skills.js"
+  }
+}
