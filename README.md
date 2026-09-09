@@ -1,7 +1,10 @@
 # clovis-multirepo-template
 
-Template de repositório wrapper para uso com Clovis CLI em cenários multi-repositório:
-skills, specs e mapas consultados pelos agentes, mais o inventário dos repositórios do ecossistema.
+Repositório wrapper para habilitar o fluxo spec-driven (SDD) do Clovis CLI em cenários cross-repo,
+permitindo planejar e implementar, em uma mesma rodada, features que atravessam vários microserviços
+ou combinam backend e frontend. Este repositório centraliza skills, specs, mapas e inventário dos
+repositórios do ecossistema para dar contexto único ao trabalho, enquanto cada repositório continua
+com ciclo de vida próprio (versionamento, releases, pipelines e automações).
 
 ## Pré-requisitos
 
