@@ -6,6 +6,14 @@ ou combinam backend e frontend. Este repositório centraliza skills, specs, mapa
 repositórios do ecossistema para dar contexto único ao trabalho, enquanto cada repositório continua
 com ciclo de vida próprio (versionamento, releases, pipelines e automações).
 
+## Documentação
+
+| Documento | Para quem |
+| --- | --- |
+| [Papéis e responsabilidades](docs/papeis-e-responsabilidades.md) | todos — comece por aqui |
+| [Tutorial do curador](docs/tutorial-curador.md) | quem monta o repositório central e roda as Etapas 1 e 2 |
+| [Guia do dia a dia](docs/guia-diario-squad.md) | dev, PO e analista, a partir das Etapas 3 e 4 |
+
 ## Pré-requisitos
 
 - **Node.js 24+** (ver [`.nvmrc`](.nvmrc)) — `nvm use`
